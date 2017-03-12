@@ -4,7 +4,7 @@ import logging
 import os
 
 from kalliope.core.ConfigurationManager import SettingLoader
-from kalliope.core.Players import Mplayer
+from kalliope.core.Players import Pyplayer
 from kalliope.core.Utils.FileManager import FileManager
 
 logging.basicConfig()
@@ -72,7 +72,8 @@ class TTSModule(object):
         """
         Play the audio file
         """
-        Mplayer.play(self.file_path)
+        #Mplayer.play(self.file_path)
+        Pyplayer.play(self.file_path)
 
     def generate_and_play(self, words, generate_audio_function_from_child=None):
         """

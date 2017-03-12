@@ -8,7 +8,7 @@ from kalliope.core import Utils
 from kalliope.core.ConfigurationManager.BrainLoader import BrainLoader
 from kalliope.core.EventManager import EventManager
 from kalliope.core.MainController import MainController
-
+from kalliope.core.Players import Pyplayer
 from _version import version_str
 import signal
 import sys
@@ -73,6 +73,10 @@ def main():
     # by default, no brain file is set.
     # Use the default one: brain.yml in the root path
     brain_file = None
+
+    # check audio devices
+    Pyplayer.print_device_info(configure_logging)
+
 
     # check if user set a brain.yml file
     if args.brain_file:
